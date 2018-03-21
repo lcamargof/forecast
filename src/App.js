@@ -86,7 +86,7 @@ export class App extends Component {
         country: search.country
       });
 
-      this.setState({ history: [...this.state.history, result.data.data] });
+      this.setState({ history: [result.data.data, ...this.state.history] });
     } catch (error) {
       console.error('Error saving history', error);
     }
