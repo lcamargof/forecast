@@ -13,17 +13,6 @@ const styles = theme => ({
   },
 });
 
-function debounce(fn, delay) {
-  var timer = null;
-  return function () {
-    var context = this, args = arguments;
-    clearTimeout(timer);
-    timer = setTimeout(function () {
-      fn.apply(context, args);
-    }, delay);
-  };
-}
-
 export class SearchSuggestions extends Component {
   state = {
     loading: false,

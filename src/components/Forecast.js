@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CircularProgress, Table, TableBody, TableCell, TableHead, TableRow, withStyles } from 'material-ui';
+import { CircularProgress, Table, TableBody, TableCell, TableRow, withStyles } from 'material-ui';
 import { Line as LineChart } from 'react-chartjs-2';
 import ForecastCard from './ForecastCard';
 
@@ -40,7 +40,7 @@ const Forecast = ({ classes, data, loading }) => {
   if (!loading && data.city) {
     const today = data.list[0];
     const chartData = {
-      labels: ['Today', 'Monday', 'Thursday', 'ASdf', 'Asdf'],
+      labels: data.list.map(item => item.dt_txt.split(' ')[0]),
       datasets: [
         {
           fill: false,
